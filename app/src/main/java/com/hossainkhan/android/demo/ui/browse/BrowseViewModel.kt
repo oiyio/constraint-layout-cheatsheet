@@ -23,18 +23,18 @@ import com.hossainkhan.android.demo.R
 import com.hossainkhan.android.demo.data.AppDataStore
 import com.hossainkhan.android.demo.data.LayoutInformation
 import com.hossainkhan.android.demo.ui.common.LiveEvent
-import com.hossainkhan.android.demo.ui.functionaldemo.MovieDetailsPreviewActivity
+import com.hossainkhan.android.demo.ui.functionaldemo.MovieDetailsActivity
 import com.hossainkhan.android.demo.ui.functionaldemo.TedTalkPlaybackActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutChainStyleActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutDimensionMinMaxActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutGuidelineBarrierActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutGuidelineGroupActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutVisibilityGoneActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.ChainStyleActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.DimensionMinMaxActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.GuidelineBarrierActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.GuidelineGroupActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.VisibilityGoneActivity
 import com.hossainkhan.android.demo.ui.resource.LearningResourceActivity
 import timber.log.Timber
 import javax.inject.Inject
 
-class LayoutBrowseViewModel @Inject constructor(
+class BrowseViewModel @Inject constructor(
         appDataStore: AppDataStore
 ) : ViewModel() {
 
@@ -61,25 +61,25 @@ class LayoutBrowseViewModel @Inject constructor(
          * Where applicable, loads specific activity with interactive feature for user to try out feature.
          */
         when (layoutResId) {
-            R.layout.preview_visibility_gone -> {
-                _browseResult.value = BrowseResult(LayoutVisibilityGoneActivity::class.java, layoutResId)
+            R.layout.activity_visibility_gone -> {
+                _browseResult.value = BrowseResult(VisibilityGoneActivity::class.java, layoutResId)
             }
-            R.layout.preview_chain_style_main -> {
-                _browseResult.value = BrowseResult(LayoutChainStyleActivity::class.java, layoutResId)
+            R.layout.activity_chain_style -> {
+                _browseResult.value = BrowseResult(ChainStyleActivity::class.java, layoutResId)
             }
-            R.layout.preview_virtual_helper_barrier -> {
-                _browseResult.value = BrowseResult(LayoutGuidelineBarrierActivity::class.java, layoutResId)
+            R.layout.activity_guideline_barrier -> {
+                _browseResult.value = BrowseResult(GuidelineBarrierActivity::class.java, layoutResId)
             }
-            R.layout.preview_virtual_helper_group -> {
-                _browseResult.value = BrowseResult(LayoutGuidelineGroupActivity::class.java, layoutResId)
+            R.layout.activity_guideline_group -> {
+                _browseResult.value = BrowseResult(GuidelineGroupActivity::class.java, layoutResId)
             }
-            R.layout.preview_dimension_min_max -> {
-                _browseResult.value = BrowseResult(LayoutDimensionMinMaxActivity::class.java, layoutResId)
+            R.layout.activity_dimension_min_max -> {
+                _browseResult.value = BrowseResult(DimensionMinMaxActivity::class.java, layoutResId)
             }
-            R.layout.demo_movie_details -> {
-                _browseResult.value = BrowseResult(MovieDetailsPreviewActivity::class.java, layoutResId)
+            R.layout.activity_movie_details -> {
+                _browseResult.value = BrowseResult(MovieDetailsActivity::class.java, layoutResId)
             }
-            R.layout.demo_ted_talk_playback -> {
+            R.layout.activity_ted_talk_playback -> {
                 _browseResult.value = BrowseResult(TedTalkPlaybackActivity::class.java, layoutResId)
             }
             R.layout.activity_learning_resource -> {

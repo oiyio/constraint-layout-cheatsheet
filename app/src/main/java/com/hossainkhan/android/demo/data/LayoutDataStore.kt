@@ -67,7 +67,7 @@ class LayoutDataStore @Inject constructor(
                             "layout_constraintCircleRadius : the distance to the other widget center\n" +
                             "layout_constraintCircleAngle : which angle the widget should be at (in degrees, from 0 to 360)\n"),
             LayoutInformation(
-                    layoutResourceId = R.layout.preview_visibility_gone,
+                    layoutResourceId = R.layout.activity_visibility_gone,
                     thumbnailResourceId = R.drawable.thumb_visibility_behaviour,
                     title = "Visibility: GONE behaviour",
                     description = "A view marked as GONE are not going to be displayed and are not part of the layout itself.\n" +
@@ -76,7 +76,7 @@ class LayoutDataStore @Inject constructor(
                             " * For the layout pass, their dimension will be considered as zero (basically, they will be resolved to a point)\n" +
                             " * If they have constraints to other widgets they will still be respected, but any margins will be as if equals to zero"),
             LayoutInformation(
-                    layoutResourceId = R.layout.preview_chain_style_main,
+                    layoutResourceId = R.layout.activity_chain_style,
                     thumbnailResourceId = R.drawable.thumb_chain_style,
                     title = "Chain: Pack Style",
                     description = "When setting the attribute `constraintHorizontal_chainStyle` or " +
@@ -116,7 +116,7 @@ class LayoutDataStore @Inject constructor(
              * https://developer.android.com/reference/android/support/constraint/ConstraintLayout#DimensionConstraints
              */
             LayoutInformation(
-                    layoutResourceId = R.layout.preview_dimension_min_max,
+                    layoutResourceId = R.layout.activity_dimension_min_max,
                     thumbnailResourceId = R.drawable.thumb_dimension_min_max,
                     title = "Dimension: Min & Max (width/height)",
                     description = "You can define minimum and maximum sizes for the ConstraintLayout itself:\n\n" +
@@ -144,7 +144,7 @@ class LayoutDataStore @Inject constructor(
              * https://constraintlayout.com/basics/barriers.html
              */
             LayoutInformation(
-                    layoutResourceId = R.layout.preview_virtual_helper_barrier,
+                    layoutResourceId = R.layout.activity_guideline_barrier,
                     thumbnailResourceId = R.drawable.thumb_virtual_helper_barrier,
                     title = "Virtual Helper: Barrier",
                     description = "A Barrier references multiple widgets as input, and creates a virtual guideline " +
@@ -154,7 +154,7 @@ class LayoutDataStore @Inject constructor(
              * https://developer.android.com/reference/android/support/constraint/Group.html
              */
             LayoutInformation(
-                    layoutResourceId = R.layout.preview_virtual_helper_group,
+                    layoutResourceId = R.layout.activity_guideline_group,
                     thumbnailResourceId = R.drawable.thumb_virtual_helper_group,
                     title = "Virtual Helper: Group",
                     description = "This class controls the visibility of a set of referenced widgets. " +
@@ -173,7 +173,7 @@ class LayoutDataStore @Inject constructor(
              *           | ;----'
              */
             LayoutInformation(
-                    layoutResourceId = R.layout.demo_movie_details,
+                    layoutResourceId = R.layout.activity_movie_details,
                     thumbnailResourceId = R.drawable.spider_verse_poster,
                     title = "Demo: Movie Details",
                     description = "A demo screen containing movie details. Rotate device to see constraints in action."),
@@ -194,7 +194,7 @@ class LayoutDataStore @Inject constructor(
              *     *            *
              */
             LayoutInformation(
-                    layoutResourceId = R.layout.demo_ted_talk_playback,
+                    layoutResourceId = R.layout.activity_ted_talk_playback,
                     thumbnailResourceId = R.drawable.ic_ted_talks_logo,
                     title = "Demo: TED Talk Preview Screen",
                     description = "A demo screen containing TED talks video playback screen with different controls."),

@@ -27,10 +27,10 @@ import android.widget.TextView
 import com.hossainkhan.android.demo.R
 import com.hossainkhan.android.demo.data.LayoutInformation
 
-class LayoutBrowseAdapter(
-        viewModel: LayoutBrowseViewModel,
+class BrowseAdapter(
+        viewModel: BrowseViewModel,
         lifecycleOwner: LifecycleOwner,
-        private val itemSelectedListener: (Int) -> Unit) : RecyclerView.Adapter<LayoutBrowseAdapter.ViewHolder>() {
+        private val itemSelectedListener: (Int) -> Unit) : RecyclerView.Adapter<BrowseAdapter.ViewHolder>() {
 
     private var data: List<LayoutInformation> = emptyList()
 

@@ -33,7 +33,7 @@ import timber.log.Timber
  *
  * https://developer.android.com/reference/android/support/constraint/ConstraintLayout#Chains
  */
-class LayoutChainStyleActivity : LayoutPreviewBaseActivity() {
+class ChainStyleActivity : BaseActivity() {
 
     private lateinit var constraintLayout: ConstraintLayout
     private lateinit var guideTextView: TextView

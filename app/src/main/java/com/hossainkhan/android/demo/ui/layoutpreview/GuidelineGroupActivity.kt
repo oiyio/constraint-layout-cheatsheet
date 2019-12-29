@@ -27,7 +27,7 @@ import com.hossainkhan.android.demo.R
  *
  * See https://developer.android.com/reference/android/support/constraint/Barrier
  */
-class LayoutGuidelineGroupActivity : LayoutPreviewBaseActivity() {
+class GuidelineGroupActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

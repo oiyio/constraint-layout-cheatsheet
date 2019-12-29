@@ -29,6 +29,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.hossainkhan.android.demo.R
 import com.hossainkhan.android.demo.data.LayoutInformation
 import com.hossainkhan.android.demo.ui.dialog.LayoutInfoDialog
+import com.hossainkhan.android.demo.ui.layoutpreview.viewmodel.InfoViewModel
 import com.hossainkhan.android.demo.viewmodel.ViewModelProviderFactory
 import dagger.android.AndroidInjection
 import timber.log.Timber
@@ -43,7 +44,7 @@ import javax.inject.Inject
  * 1. Shows tooltip with layout details for the first time only.
  * 1. Loads layout XML source code from Github.
  */
-open class LayoutPreviewBaseActivity : AppCompatActivity() {
+open class BaseActivity : AppCompatActivity() {
 
     companion object {
         internal const val BUNDLE_KEY_LAYOUT_RESID = "KEY_LAYOUT_RESOURCE_ID"
@@ -55,7 +56,7 @@ open class LayoutPreviewBaseActivity : AppCompatActivity() {
          * @param layoutResourceId The layout resource ID to load into the view.
          */
         fun createStartIntent(context: Context, @LayoutRes layoutResourceId: Int): Intent {
-            val intent = Intent(context, LayoutPreviewBaseActivity::class.java)
+            val intent = Intent(context, BaseActivity::class.java)
             intent.putExtra(BUNDLE_KEY_LAYOUT_RESID, layoutResourceId)
             return intent
         }
@@ -77,7 +78,7 @@ open class LayoutPreviewBaseActivity : AppCompatActivity() {
     @Inject
     internal lateinit var viewModelFactory: ViewModelProviderFactory
 
-    private lateinit var viewModel: LayoutInfoViewModel
+    private lateinit var viewModel: InfoViewModel
 
     internal var infoDialog: LayoutInfoDialog? = null
 
@@ -89,7 +90,7 @@ open class LayoutPreviewBaseActivity : AppCompatActivity() {
 
         setContentView(layoutResourceId)
 
-        viewModel = ViewModelProvider(this, viewModelFactory).get(LayoutInfoViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(InfoViewModel::class.java)
         viewModel.init(layoutResourceId)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

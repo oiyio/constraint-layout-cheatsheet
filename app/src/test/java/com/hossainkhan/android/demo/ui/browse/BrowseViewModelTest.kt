@@ -23,10 +23,10 @@ import androidx.lifecycle.Observer
 import com.hossainkhan.android.demo.R
 import com.hossainkhan.android.demo.data.AppDataStore
 import com.hossainkhan.android.demo.data.LayoutDataStore
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutChainStyleActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutGuidelineBarrierActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutGuidelineGroupActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutVisibilityGoneActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.ChainStyleActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.GuidelineBarrierActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.GuidelineGroupActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.VisibilityGoneActivity
 import com.hossainkhan.android.demo.ui.resource.LearningResourceActivity
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -41,7 +41,7 @@ import org.mockito.Mockito.anyString
 import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
 
-class LayoutBrowseViewModelTest {
+class BrowseViewModelTest {
 
     /**
      * Uses rule to test LiveData
@@ -64,7 +64,7 @@ class LayoutBrowseViewModelTest {
     private val layoutStore = LayoutDataStore(resources)
     private lateinit var owner: TestLifecycleOwner
 
-    lateinit var sut: LayoutBrowseViewModel
+    lateinit var sut: BrowseViewModel
 
 
     @Before
@@ -72,7 +72,7 @@ class LayoutBrowseViewModelTest {
         `when`(editor.putBoolean(anyString(), anyBoolean())).thenReturn(editor)
         `when`(preferences.edit()).thenReturn(editor)
         owner = TestLifecycleOwner()
-        sut = LayoutBrowseViewModel(AppDataStore(preferences, layoutStore))
+        sut = BrowseViewModel(AppDataStore(preferences, layoutStore))
     }
 
 
@@ -92,11 +92,11 @@ class LayoutBrowseViewModelTest {
         owner.start()
         sut.browseResult.observe(owner, observer)
 
-        val layoutResId = R.layout.preview_visibility_gone
+        val layoutResId = R.layout.activity_visibility_gone
         sut.onLayoutItemSelected(layoutResId)
 
         verify(observer).onChanged(resultCaptor.capture())
-        assertEquals(LayoutVisibilityGoneActivity::class.java, resultCaptor.value.clazz)
+        assertEquals(VisibilityGoneActivity::class.java, resultCaptor.value.clazz)
         assertEquals(layoutResId, resultCaptor.value.layoutResId)
     }
 
@@ -105,11 +105,11 @@ class LayoutBrowseViewModelTest {
         owner.start()
         sut.browseResult.observe(owner, observer)
 
-        val layoutResId = R.layout.preview_chain_style_main
+        val layoutResId = R.layout.activity_chain_style
         sut.onLayoutItemSelected(layoutResId)
 
         verify(observer).onChanged(resultCaptor.capture())
-        assertEquals(LayoutChainStyleActivity::class.java, resultCaptor.value.clazz)
+        assertEquals(ChainStyleActivity::class.java, resultCaptor.value.clazz)
         assertEquals(layoutResId, resultCaptor.value.layoutResId)
     }
 
@@ -118,11 +118,11 @@ class LayoutBrowseViewModelTest {
         owner.start()
         sut.browseResult.observe(owner, observer)
 
-        val layoutResId = R.layout.preview_virtual_helper_barrier
+        val layoutResId = R.layout.activity_guideline_barrier
         sut.onLayoutItemSelected(layoutResId)
 
         verify(observer).onChanged(resultCaptor.capture())
-        assertEquals(LayoutGuidelineBarrierActivity::class.java, resultCaptor.value.clazz)
+        assertEquals(GuidelineBarrierActivity::class.java, resultCaptor.value.clazz)
         assertEquals(layoutResId, resultCaptor.value.layoutResId)
     }
 
@@ -131,11 +131,11 @@ class LayoutBrowseViewModelTest {
         owner.start()
         sut.browseResult.observe(owner, observer)
 
-        val layoutResId = R.layout.preview_virtual_helper_group
+        val layoutResId = R.layout.activity_guideline_group
         sut.onLayoutItemSelected(layoutResId)
 
         verify(observer).onChanged(resultCaptor.capture())
-        assertEquals(LayoutGuidelineGroupActivity::class.java, resultCaptor.value.clazz)
+        assertEquals(GuidelineGroupActivity::class.java, resultCaptor.value.clazz)
         assertEquals(layoutResId, resultCaptor.value.layoutResId)
     }
 

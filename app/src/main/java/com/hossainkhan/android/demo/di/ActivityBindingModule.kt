@@ -16,14 +16,14 @@
 
 package com.hossainkhan.android.demo.di
 
-import com.hossainkhan.android.demo.ui.functionaldemo.MovieDetailsPreviewActivity
+import com.hossainkhan.android.demo.ui.functionaldemo.MovieDetailsActivity
 import com.hossainkhan.android.demo.ui.functionaldemo.TedTalkPlaybackActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutChainStyleActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutDimensionMinMaxActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutGuidelineBarrierActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutGuidelineGroupActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutPreviewBaseActivity
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutVisibilityGoneActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.ChainStyleActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.DimensionMinMaxActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.GuidelineBarrierActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.GuidelineGroupActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.BaseActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.VisibilityGoneActivity
 import com.hossainkhan.android.demo.ui.resource.LearningResourceActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -55,31 +55,31 @@ abstract class ActivityBindingModule {
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun layoutPreviewBaseActivity(): LayoutPreviewBaseActivity
+    abstract fun layoutPreviewBaseActivity(): BaseActivity
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun layoutVisibilityActivity(): LayoutVisibilityGoneActivity
+    abstract fun layoutVisibilityActivity(): VisibilityGoneActivity
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun layoutChainActivity(): LayoutChainStyleActivity
+    abstract fun layoutChainActivity(): ChainStyleActivity
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun layoutGuidelineBarrierActivity(): LayoutGuidelineBarrierActivity
+    abstract fun layoutGuidelineBarrierActivity(): GuidelineBarrierActivity
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun layoutGuidelineGroupActivity(): LayoutGuidelineGroupActivity
+    abstract fun layoutGuidelineGroupActivity(): GuidelineGroupActivity
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun layoutDimensionMinMaxActivity(): LayoutDimensionMinMaxActivity
+    abstract fun layoutDimensionMinMaxActivity(): DimensionMinMaxActivity
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun layoutMovieDetailsPreviewActivity(): MovieDetailsPreviewActivity
+    abstract fun layoutMovieDetailsPreviewActivity(): MovieDetailsActivity
 
     @ActivityScope
     @ContributesAndroidInjector

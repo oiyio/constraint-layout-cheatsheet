@@ -22,7 +22,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import com.hossainkhan.android.demo.R
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutPreviewBaseActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.BaseActivity
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.net.Uri
@@ -38,7 +38,7 @@ import androidx.recyclerview.widget.RecyclerView
  *
  * See https://developer.android.com/reference/android/support/constraint/ConstraintLayout#VisibilityBehavior
  */
-class MovieDetailsPreviewActivity : LayoutPreviewBaseActivity() {
+class MovieDetailsActivity : BaseActivity() {
     private val generalClickListener = View.OnClickListener { view ->
         Toast.makeText(view.context, "You tapped on ${view}", Toast.LENGTH_SHORT).show()
 
@@ -75,8 +75,8 @@ class MovieDetailsPreviewActivity : LayoutPreviewBaseActivity() {
 
         recyclerView.apply {
             setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(this@MovieDetailsPreviewActivity, LinearLayoutManager.HORIZONTAL, false)
-            adapter = MoviePosterAdapter()
+            layoutManager = LinearLayoutManager(this@MovieDetailsActivity, LinearLayoutManager.HORIZONTAL, false)
+            adapter = MovieDetailsAdapter()
         }
     }
 

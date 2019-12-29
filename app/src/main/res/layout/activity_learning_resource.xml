@@ -34,7 +34,7 @@
             tools:listitem="@layout/list_item_resource_tech_talk" />
 
         <ProgressBar
-            android:id="@+id/loading_indicator"
+            android:id="@+id/loadingIndicator"
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

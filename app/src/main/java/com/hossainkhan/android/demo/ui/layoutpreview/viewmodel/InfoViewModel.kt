@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.hossainkhan.android.demo.ui.layoutpreview
+package com.hossainkhan.android.demo.ui.layoutpreview.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -28,7 +28,7 @@ import javax.inject.Inject
 /**
  * ViewModel for containing layout information.
  */
-class LayoutInfoViewModel @Inject constructor(private val appDataStore: AppDataStore) : ViewModel() {
+class InfoViewModel @Inject constructor(private val appDataStore: AppDataStore) : ViewModel() {
     private val layoutInfoLiveData: MutableLiveData<LayoutInformation> = MutableLiveData()
 
     val layoutInformation: LiveData<LayoutInformation>

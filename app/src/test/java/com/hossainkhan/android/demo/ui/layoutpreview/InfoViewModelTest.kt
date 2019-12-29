@@ -26,11 +26,12 @@ import org.junit.Assert.*
 import org.junit.Before
 import org.mockito.Mockito.mock
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.hossainkhan.android.demo.ui.layoutpreview.viewmodel.InfoViewModel
 import org.junit.rules.TestRule
 import org.junit.Rule
 
 
-class LayoutInfoViewModelTest {
+class InfoViewModelTest {
     /**
      * Uses rule to test LiveData
      *
@@ -47,11 +48,11 @@ class LayoutInfoViewModelTest {
 
     private val mockLayoutId = layoutStore.supportedLayoutInfos.first().layoutResourceId
 
-    lateinit var sut: LayoutInfoViewModel
+    lateinit var sut: InfoViewModel
 
     @Before
     fun setup() {
-        sut = LayoutInfoViewModel(AppDataStore(preferences, layoutStore))
+        sut = InfoViewModel(AppDataStore(preferences, layoutStore))
     }
 
     @Test

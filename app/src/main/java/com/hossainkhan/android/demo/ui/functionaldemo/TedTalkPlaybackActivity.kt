@@ -21,9 +21,9 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
 import com.hossainkhan.android.demo.R
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutPreviewBaseActivity
+import com.hossainkhan.android.demo.ui.layoutpreview.BaseActivity
 
-class TedTalkPlaybackActivity : LayoutPreviewBaseActivity() {
+class TedTalkPlaybackActivity : BaseActivity() {
     private val generalClickListener = View.OnClickListener { view ->
         Toast.makeText(view.context, "You tapped on ${view}", Toast.LENGTH_SHORT).show()
     }

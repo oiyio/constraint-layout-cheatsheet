@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ui.browse.LayoutBrowseActivity">
+        <activity android:name=".ui.browse.BrowseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,33 +20,33 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.layoutpreview.LayoutPreviewBaseActivity"
-            android:parentActivityName=".ui.browse.LayoutBrowseActivity" />
+            android:name=".ui.layoutpreview.BaseActivity"
+            android:parentActivityName=".ui.browse.BrowseActivity" />
         <activity
-            android:name=".ui.layoutpreview.LayoutVisibilityGoneActivity"
-            android:parentActivityName=".ui.browse.LayoutBrowseActivity" />
+            android:name=".ui.layoutpreview.VisibilityGoneActivity"
+            android:parentActivityName=".ui.browse.BrowseActivity" />
         <activity
-            android:name=".ui.layoutpreview.LayoutChainStyleActivity"
-            android:parentActivityName=".ui.browse.LayoutBrowseActivity" />
+            android:name=".ui.layoutpreview.ChainStyleActivity"
+            android:parentActivityName=".ui.browse.BrowseActivity" />
         <activity
-            android:name=".ui.layoutpreview.LayoutGuidelineBarrierActivity"
-            android:parentActivityName=".ui.browse.LayoutBrowseActivity" />
+            android:name=".ui.layoutpreview.GuidelineBarrierActivity"
+            android:parentActivityName=".ui.browse.BrowseActivity" />
         <activity
-            android:name=".ui.layoutpreview.LayoutGuidelineGroupActivity"
-            android:parentActivityName=".ui.browse.LayoutBrowseActivity" />
+            android:name=".ui.layoutpreview.GuidelineGroupActivity"
+            android:parentActivityName=".ui.browse.BrowseActivity" />
         <activity
-            android:name=".ui.layoutpreview.LayoutDimensionMinMaxActivity"
-            android:parentActivityName=".ui.browse.LayoutBrowseActivity" />
+            android:name=".ui.layoutpreview.DimensionMinMaxActivity"
+            android:parentActivityName=".ui.browse.BrowseActivity" />
         <activity
-            android:name=".ui.functionaldemo.MovieDetailsPreviewActivity"
-            android:parentActivityName=".ui.browse.LayoutBrowseActivity" />
+            android:name=".ui.functionaldemo.MovieDetailsActivity"
+            android:parentActivityName=".ui.browse.BrowseActivity" />
         <activity
             android:name=".ui.functionaldemo.TedTalkPlaybackActivity"
-            android:parentActivityName=".ui.browse.LayoutBrowseActivity" />
+            android:parentActivityName=".ui.browse.BrowseActivity" />
         <activity
             android:label="@string/additional_resource_title"
             android:name=".ui.resource.LearningResourceActivity"
-            android:parentActivityName=".ui.browse.LayoutBrowseActivity" />
+            android:parentActivityName=".ui.browse.BrowseActivity" />
     </application>
 
 </manifest>

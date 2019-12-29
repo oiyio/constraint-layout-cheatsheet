@@ -18,8 +18,8 @@ package com.hossainkhan.android.demo.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.hossainkhan.android.demo.ui.browse.LayoutBrowseViewModel
-import com.hossainkhan.android.demo.ui.layoutpreview.LayoutInfoViewModel
+import com.hossainkhan.android.demo.ui.browse.BrowseViewModel
+import com.hossainkhan.android.demo.ui.layoutpreview.viewmodel.InfoViewModel
 import com.hossainkhan.android.demo.ui.resource.LearningResourceViewModel
 import com.hossainkhan.android.demo.viewmodel.ViewModelProviderFactory
 import dagger.Binds
@@ -36,13 +36,13 @@ import dagger.multibindings.IntoMap
 abstract class ViewModelModule {
     @Binds
     @IntoMap
-    @ViewModelKey(LayoutBrowseViewModel::class)
-    abstract fun bindLayoutBrowserViewModel(viewModel: LayoutBrowseViewModel): ViewModel
+    @ViewModelKey(BrowseViewModel::class)
+    abstract fun bindLayoutBrowserViewModel(viewModel: BrowseViewModel): ViewModel
 
     @Binds
     @IntoMap
-    @ViewModelKey(LayoutInfoViewModel::class)
-    abstract fun bindLayoutInfoViewModel(viewModel: LayoutInfoViewModel): ViewModel
+    @ViewModelKey(InfoViewModel::class)
+    abstract fun bindLayoutInfoViewModel(viewModel: InfoViewModel): ViewModel
 
     @Binds
     @IntoMap
