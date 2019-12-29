@@ -73,7 +73,7 @@ class ChainStyleActivity : BaseActivity() {
             Timber.d("Updating chain style to %s, and text to %s", chainStyle, getString(guideText))
             guideTextView.setText(guideText)
             TransitionManager.beginDelayedTransition(constraintLayout)
-            constraintSet.setHorizontalChainStyle(R.id.view_chain_view_first, chainStyle)
+            constraintSet.setHorizontalChainStyle(R.id.firstView, chainStyle)
             constraintSet.applyTo(constraintLayout)
         } else {
             Timber.i("View was not checked. Not taking action.")

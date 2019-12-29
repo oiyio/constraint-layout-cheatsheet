@@ -29,31 +29,31 @@
     -->
 
     <View
-        android:id="@+id/view_chain_view_first"
+        android:id="@+id/firstView"
         style="@style/MediumBox"
         android:layout_width="0dp"
-        app:layout_constraintEnd_toStartOf="@+id/view_chain_view_middle"
+        app:layout_constraintEnd_toStartOf="@+id/middleView"
         app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/view_chain_view_middle"
+        android:id="@+id/middleView"
         style="@style/MediumBox.Purple"
         android:layout_width="0dp"
 
-        app:layout_constraintEnd_toStartOf="@+id/view_chain_view_last"
+        app:layout_constraintEnd_toStartOf="@+id/lastView"
         app:layout_constraintHorizontal_weight="60"
-        app:layout_constraintStart_toEndOf="@+id/view_chain_view_first"
+        app:layout_constraintStart_toEndOf="@+id/firstView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/view_chain_view_last"
+        android:id="@+id/lastView"
         style="@style/MediumBox.Variant1"
         android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="30"
-        app:layout_constraintStart_toEndOf="@+id/view_chain_view_middle"
+        app:layout_constraintStart_toEndOf="@+id/middleView"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -74,7 +74,7 @@
         layout_constraintHorizontal_weight='30' respectively."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_chain_view_middle" />
+        app:layout_constraintTop_toBottomOf="@+id/middleView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
