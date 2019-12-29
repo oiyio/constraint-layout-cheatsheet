@@ -16,7 +16,7 @@
 
 package com.hossainkhan.android.demo.ui.browse
 
-class BrowseResult<out T : Any>(
+class MainResult<out T : Any>(
         val clazz: Class<out T>? = null,
         val layoutResId: Int? = null
 )

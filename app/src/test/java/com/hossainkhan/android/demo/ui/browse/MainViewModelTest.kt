@@ -41,7 +41,7 @@ import org.mockito.Mockito.anyString
 import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
 
-class BrowseViewModelTest {
+class MainViewModelTest {
 
     /**
      * Uses rule to test LiveData
@@ -59,12 +59,12 @@ class BrowseViewModelTest {
     private val resources: Resources = mock(Resources::class.java)
     private val preferences: SharedPreferences = mock(SharedPreferences::class.java)
     private val editor = mock(SharedPreferences.Editor::class.java)
-    private var observer: Observer<BrowseResult<*>> = mockTyped()
-    val resultCaptor = ArgumentCaptor.forClass(BrowseResult::class.java)
+    private var observer: Observer<MainResult<*>> = mockTyped()
+    val resultCaptor = ArgumentCaptor.forClass(MainResult::class.java)
     private val layoutStore = LayoutDataStore(resources)
     private lateinit var owner: TestLifecycleOwner
 
-    lateinit var sut: BrowseViewModel
+    lateinit var sut: MainViewModel
 
 
     @Before
@@ -72,14 +72,14 @@ class BrowseViewModelTest {
         `when`(editor.putBoolean(anyString(), anyBoolean())).thenReturn(editor)
         `when`(preferences.edit()).thenReturn(editor)
         owner = TestLifecycleOwner()
-        sut = BrowseViewModel(AppDataStore(preferences, layoutStore))
+        sut = MainViewModel(AppDataStore(preferences, layoutStore))
     }
 
 
     @Test
     fun onLayoutItemSelected_givenGenericLayout_loadsDefaultPreview() {
         owner.start()
-        sut.browseResult.observe(owner, observer)
+        sut.mainResult.observe(owner, observer)
 
         val layoutResId = 123
         sut.onLayoutItemSelected(layoutResId)
@@ -90,7 +90,7 @@ class BrowseViewModelTest {
     @Test
     fun onLayoutItemSelected_givenVisibilityGoneLayout_loadsVisibilityGonePreview() {
         owner.start()
-        sut.browseResult.observe(owner, observer)
+        sut.mainResult.observe(owner, observer)
 
         val layoutResId = R.layout.activity_visibility_gone
         sut.onLayoutItemSelected(layoutResId)
@@ -103,7 +103,7 @@ class BrowseViewModelTest {
     @Test
     fun onLayoutItemSelected_givenChainStyleLayout_loadsChainStylePreview() {
         owner.start()
-        sut.browseResult.observe(owner, observer)
+        sut.mainResult.observe(owner, observer)
 
         val layoutResId = R.layout.activity_chain_style
         sut.onLayoutItemSelected(layoutResId)
@@ -116,7 +116,7 @@ class BrowseViewModelTest {
     @Test
     fun onLayoutItemSelected_givenGuidelineBarrierLayout_loadsGuidelineBarrierPreview() {
         owner.start()
-        sut.browseResult.observe(owner, observer)
+        sut.mainResult.observe(owner, observer)
 
         val layoutResId = R.layout.activity_guideline_barrier
         sut.onLayoutItemSelected(layoutResId)
@@ -129,7 +129,7 @@ class BrowseViewModelTest {
     @Test
     fun onLayoutItemSelected_givenGuidelineGroupLayout_loadsGuidelineGroupPreview() {
         owner.start()
-        sut.browseResult.observe(owner, observer)
+        sut.mainResult.observe(owner, observer)
 
         val layoutResId = R.layout.activity_guideline_group
         sut.onLayoutItemSelected(layoutResId)
@@ -142,7 +142,7 @@ class BrowseViewModelTest {
     @Test
     fun onLayoutItemSelected_givenLearningResource_loadsLearningResource() {
         owner.start()
-        sut.browseResult.observe(owner, observer)
+        sut.mainResult.observe(owner, observer)
 
         val layoutResId = R.layout.activity_learning_resource
         sut.onLayoutItemSelected(layoutResId)

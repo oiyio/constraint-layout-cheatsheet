@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ui.browse.BrowseActivity">
+        <activity android:name=".ui.browse.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,32 +21,32 @@
         </activity>
         <activity
             android:name=".ui.layoutpreview.BaseActivity"
-            android:parentActivityName=".ui.browse.BrowseActivity" />
+            android:parentActivityName=".ui.browse.MainActivity" />
         <activity
             android:name=".ui.layoutpreview.VisibilityGoneActivity"
-            android:parentActivityName=".ui.browse.BrowseActivity" />
+            android:parentActivityName=".ui.browse.MainActivity" />
         <activity
             android:name=".ui.layoutpreview.ChainStyleActivity"
-            android:parentActivityName=".ui.browse.BrowseActivity" />
+            android:parentActivityName=".ui.browse.MainActivity" />
         <activity
             android:name=".ui.layoutpreview.GuidelineBarrierActivity"
-            android:parentActivityName=".ui.browse.BrowseActivity" />
+            android:parentActivityName=".ui.browse.MainActivity" />
         <activity
             android:name=".ui.layoutpreview.GuidelineGroupActivity"
-            android:parentActivityName=".ui.browse.BrowseActivity" />
+            android:parentActivityName=".ui.browse.MainActivity" />
         <activity
             android:name=".ui.layoutpreview.DimensionMinMaxActivity"
-            android:parentActivityName=".ui.browse.BrowseActivity" />
+            android:parentActivityName=".ui.browse.MainActivity" />
         <activity
             android:name=".ui.functionaldemo.MovieDetailsActivity"
-            android:parentActivityName=".ui.browse.BrowseActivity" />
+            android:parentActivityName=".ui.browse.MainActivity" />
         <activity
             android:name=".ui.functionaldemo.TedTalkPlaybackActivity"
-            android:parentActivityName=".ui.browse.BrowseActivity" />
+            android:parentActivityName=".ui.browse.MainActivity" />
         <activity
             android:label="@string/additional_resource_title"
             android:name=".ui.resource.LearningResourceActivity"
-            android:parentActivityName=".ui.browse.BrowseActivity" />
+            android:parentActivityName=".ui.browse.MainActivity" />
     </application>
 
 </manifest>

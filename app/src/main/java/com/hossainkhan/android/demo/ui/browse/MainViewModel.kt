@@ -34,12 +34,12 @@ import com.hossainkhan.android.demo.ui.resource.LearningResourceActivity
 import timber.log.Timber
 import javax.inject.Inject
 
-class BrowseViewModel @Inject constructor(
+class MainViewModel @Inject constructor(
         appDataStore: AppDataStore
 ) : ViewModel() {
 
-    private val _browseResult = LiveEvent<BrowseResult<Any>>()
-    val browseResult: LiveData<BrowseResult<Any>> = _browseResult
+    private val _browseResult = LiveEvent<MainResult<Any>>()
+    val mainResult: LiveData<MainResult<Any>> = _browseResult
     private val layoutInfoListLiveData = MutableLiveData<List<LayoutInformation>>()
 
     val layoutInfos: LiveData<List<LayoutInformation>>
@@ -62,38 +62,38 @@ class BrowseViewModel @Inject constructor(
          */
         when (layoutResId) {
             R.layout.activity_visibility_gone -> {
-                _browseResult.value = BrowseResult(VisibilityGoneActivity::class.java, layoutResId)
+                _browseResult.value = MainResult(VisibilityGoneActivity::class.java, layoutResId)
             }
             R.layout.activity_chain_style -> {
-                _browseResult.value = BrowseResult(ChainStyleActivity::class.java, layoutResId)
+                _browseResult.value = MainResult(ChainStyleActivity::class.java, layoutResId)
             }
             R.layout.activity_guideline_barrier -> {
-                _browseResult.value = BrowseResult(GuidelineBarrierActivity::class.java, layoutResId)
+                _browseResult.value = MainResult(GuidelineBarrierActivity::class.java, layoutResId)
             }
             R.layout.activity_guideline_group -> {
-                _browseResult.value = BrowseResult(GuidelineGroupActivity::class.java, layoutResId)
+                _browseResult.value = MainResult(GuidelineGroupActivity::class.java, layoutResId)
             }
             R.layout.activity_dimension_min_max -> {
-                _browseResult.value = BrowseResult(DimensionMinMaxActivity::class.java, layoutResId)
+                _browseResult.value = MainResult(DimensionMinMaxActivity::class.java, layoutResId)
             }
             R.layout.activity_movie_details -> {
-                _browseResult.value = BrowseResult(MovieDetailsActivity::class.java, layoutResId)
+                _browseResult.value = MainResult(MovieDetailsActivity::class.java, layoutResId)
             }
             R.layout.activity_ted_talk_playback -> {
-                _browseResult.value = BrowseResult(TedTalkPlaybackActivity::class.java, layoutResId)
+                _browseResult.value = MainResult(TedTalkPlaybackActivity::class.java, layoutResId)
             }
             R.layout.activity_learning_resource -> {
-                _browseResult.value = BrowseResult(LearningResourceActivity::class.java)
+                _browseResult.value = MainResult(LearningResourceActivity::class.java)
             }
             else -> {
                 // By default it loads the preview activity with the layout requested.
-                _browseResult.value = BrowseResult(layoutResId = layoutResId)
+                _browseResult.value = MainResult(layoutResId = layoutResId)
             }
         }
 
     }
 
     fun onExternalResourceSelected() {
-        _browseResult.value = BrowseResult(LearningResourceActivity::class.java)
+        _browseResult.value = MainResult(LearningResourceActivity::class.java)
     }
 }

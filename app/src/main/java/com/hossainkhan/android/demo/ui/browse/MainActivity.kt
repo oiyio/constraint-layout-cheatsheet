@@ -37,14 +37,14 @@ import javax.inject.Inject
 /**
  * A list activity that shows all the available example demo layouts.
  */
-class BrowseActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     @Inject
     internal lateinit var viewModelFactory: ViewModelProviderFactory
 
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
 
-    private lateinit var viewModel: BrowseViewModel
+    private lateinit var viewModel: MainViewModel
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,15 +53,15 @@ class BrowseActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         viewModel = ViewModelProviders.of(this, viewModelFactory)
-                .get(BrowseViewModel::class.java)
+                .get(MainViewModel::class.java)
 
         setupLayoutInfoAdapter(viewModel, binding.recyclerView)
         observeBrowseEvent()
     }
 
-    private fun setupLayoutInfoAdapter(viewModel: BrowseViewModel, recyclerView: RecyclerView) {
+    private fun setupLayoutInfoAdapter(viewModel: MainViewModel, recyclerView: RecyclerView) {
         viewManager = GridLayoutManager(this, resources.getInteger(R.integer.grid_column_count))
-        viewAdapter = BrowseAdapter(
+        viewAdapter = MainAdapter(
                 viewModel = viewModel,
                 lifecycleOwner = this,
                 itemSelectedListener = viewModel::onLayoutItemSelected)
@@ -80,19 +80,19 @@ class BrowseActivity : AppCompatActivity() {
     }
 
     private fun observeBrowseEvent() {
-        viewModel.browseResult.observe(this, Observer { result ->
+        viewModel.mainResult.observe(this, Observer { result ->
             if (result.layoutResId == null) {
                 // Load separate activity not related to layout preview
-                startActivity(Intent(this@BrowseActivity, result.clazz))
+                startActivity(Intent(this@MainActivity, result.clazz))
             } else {
                 if (result.clazz != null) {
                     val startIntent = BaseActivity
-                            .createStartIntent(this@BrowseActivity, result.clazz, result.layoutResId)
+                            .createStartIntent(this@MainActivity, result.clazz, result.layoutResId)
                     startActivity(startIntent)
                 } else {
                     // Load regular layout preview activity
                     val startIntent = BaseActivity
-                            .createStartIntent(this@BrowseActivity, result.layoutResId)
+                            .createStartIntent(this@MainActivity, result.layoutResId)
                     startActivity(startIntent)
                 }
             }

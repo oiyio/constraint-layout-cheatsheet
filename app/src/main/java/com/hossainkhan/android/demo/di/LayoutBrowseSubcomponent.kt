@@ -16,12 +16,12 @@
 
 package com.hossainkhan.android.demo.di
 
-import com.hossainkhan.android.demo.ui.browse.BrowseActivity
+import com.hossainkhan.android.demo.ui.browse.MainActivity
 import dagger.Subcomponent
 import dagger.android.AndroidInjector
 
 @Subcomponent
-interface LayoutBrowseSubcomponent : AndroidInjector<BrowseActivity> {
+interface LayoutBrowseSubcomponent : AndroidInjector<MainActivity> {
     @Subcomponent.Builder
-    abstract class Builder : AndroidInjector.Builder<BrowseActivity>()
+    abstract class Builder : AndroidInjector.Builder<MainActivity>()
 }
