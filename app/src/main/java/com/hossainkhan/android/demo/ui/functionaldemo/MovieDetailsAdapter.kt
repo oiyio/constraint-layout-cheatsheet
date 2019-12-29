@@ -25,7 +25,7 @@ import com.hossainkhan.android.demo.R
 /**
  * A simple adapter container movie poster images.
  */
-class MoviePosterAdapter : RecyclerView.Adapter<MoviePosterAdapter.PosterViewHolder>() {
+class MovieDetailsAdapter : RecyclerView.Adapter<MovieDetailsAdapter.PosterViewHolder>() {
     private val posterImageResourceIds = listOf(
             R.drawable.poster_lego_batman,
             R.drawable.poster_i2,

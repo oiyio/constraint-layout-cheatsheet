@@ -18,7 +18,7 @@
 <merge xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    tools:showIn="@layout/preview_chain_style_main">
+    tools:showIn="@layout/activity_chain_style">
 
 
     <!-- NOTE:  All children of ConstraintLayout must have ids to use ConstraintSet -->
