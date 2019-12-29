@@ -41,8 +41,8 @@ class MainActivity : AppCompatActivity() {
     @Inject
     internal lateinit var viewModelFactory: ViewModelProviderFactory
 
-    private lateinit var viewAdapter: RecyclerView.Adapter<*>
-    private lateinit var viewManager: RecyclerView.LayoutManager
+    private lateinit var adapter: RecyclerView.Adapter<*>
+    private lateinit var layoutManager: RecyclerView.LayoutManager
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: ActivityMainBinding
@@ -60,8 +60,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupLayoutInfoAdapter(viewModel: MainViewModel, recyclerView: RecyclerView) {
-        viewManager = GridLayoutManager(this, resources.getInteger(R.integer.grid_column_count))
-        viewAdapter = MainAdapter(
+        layoutManager = GridLayoutManager(this, resources.getInteger(R.integer.grid_column_count))
+        adapter = MainAdapter(
                 viewModel = viewModel,
                 lifecycleOwner = this,
                 itemSelectedListener = viewModel::onLayoutItemSelected)
@@ -72,10 +72,10 @@ class MainActivity : AppCompatActivity() {
             setHasFixedSize(true)
 
             // use a linear layout manager
-            layoutManager = viewManager
+            layoutManager = layoutManager
 
             // specify an viewAdapter (see also next example)
-            adapter = viewAdapter
+            adapter = adapter
         }
     }
 

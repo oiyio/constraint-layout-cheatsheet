@@ -49,7 +49,6 @@ class MainViewModel @Inject constructor(
         Timber.d("Is first time user: ${appDataStore.isFirstTime()}")
         appDataStore.updateFirstTimeUser(false)
 
-
         layoutInfoListLiveData.value = appDataStore.layoutStore.supportedLayoutInfos
     }
 
