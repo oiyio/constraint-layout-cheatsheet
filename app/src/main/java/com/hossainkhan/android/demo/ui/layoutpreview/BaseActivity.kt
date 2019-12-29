@@ -55,7 +55,7 @@ open class BaseActivity : AppCompatActivity() {
          * @param context Activity context.
          * @param layoutResourceId The layout resource ID to load into the view.
          */
-        fun createStartIntent(context: Context, @LayoutRes layoutResourceId: Int): Intent {
+        fun getStartIntent(context: Context, @LayoutRes layoutResourceId: Int): Intent {
             val intent = Intent(context, BaseActivity::class.java)
             intent.putExtra(BUNDLE_KEY_LAYOUT_RESID, layoutResourceId)
             return intent
@@ -68,7 +68,7 @@ open class BaseActivity : AppCompatActivity() {
          * @param clazz Activity class that has interactive demo.
          * @param layoutResourceId The layout resource ID to load into the view.
          */
-        fun <T> createStartIntent(context: Context, clazz: Class<T>, @LayoutRes layoutResourceId: Int): Intent {
+        fun <T> getStartIntent(context: Context, clazz: Class<T>, @LayoutRes layoutResourceId: Int): Intent {
             val intent = Intent(context, clazz)
             intent.putExtra(BUNDLE_KEY_LAYOUT_RESID, layoutResourceId)
             return intent

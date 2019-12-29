@@ -86,13 +86,11 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this@MainActivity, result.clazz))
             } else {
                 if (result.clazz != null) {
-                    val startIntent = BaseActivity
-                            .createStartIntent(this@MainActivity, result.clazz, result.layoutResId)
+                    val startIntent = BaseActivity.getStartIntent(this@MainActivity, result.clazz, result.layoutResId)
                     startActivity(startIntent)
                 } else {
                     // Load regular layout preview activity
-                    val startIntent = BaseActivity
-                            .createStartIntent(this@MainActivity, result.layoutResId)
+                    val startIntent = BaseActivity.getStartIntent(this@MainActivity, result.layoutResId)
                     startActivity(startIntent)
                 }
             }
